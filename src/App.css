@@ -1,38 +1,284 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f5f6fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.app__header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+
+.app__dropdown {
+  background-color: #fff;
+}
+
+.graph__cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.graph__card {
+  margin: 10px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-heading {
+  color: #777;
+  text-transform: uppercase;
+}
+
+.main-heading-primary {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 15px;
+  animation: moveInLeft 1s ease-out;
+}
+
+.main-heading-secondary {
+  font-family: sans-serif;
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 10px;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  to {
-    transform: rotate(360deg);
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .app__stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .app__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+  }
+
+  .main-heading {
+    margin-bottom: 20px;
+  }
+
+  .app__mapContainer {
+    margin-bottom: 20px;
+  }
+
+  .table-chart-container {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .app__graph {
+    flex-grow: 0.5;
+    margin: 20px 0px;
+  }
+}
+
+phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .app {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .app__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+  }
+
+  .main-heading {
+    margin-bottom: 20px;
+  }
+
+  .app__mapContainer {
+    margin-bottom: 20px;
+  }
+
+  .table-chart-container {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .app__graph {
+    flex-grow: 1;
+    margin: 20px 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .app {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .app__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
+
+  .app__mapContainer {
+    margin-bottom: 20px;
+  }
+
+  .table-chart-container {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .app__graph {
+    flex-grow: 1;
+    margin: 20px 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .app {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .app__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
+
+  .app__mapContainer {
+    margin-bottom: 20px;
+  }
+
+  .table-chart-container {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__graph {
+    flex-grow: 0.5;
+    margin: 0px 0px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .app {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .app__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 0px;
+  }
+
+  .app__mapContainer {
+    margin-bottom: 20px;
+  }
+
+  .table-chart-container {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app__table {
+    flex-grow: 2;
+  }
+
+  .app__graph {
+    flex-grow: 1;
+    margin: 0px 0px;
   }
 }
